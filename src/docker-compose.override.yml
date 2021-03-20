@@ -283,6 +283,10 @@ services:
       - SignalrHubUrl=http://${ESHOP_EXTERNAL_DNS_NAME_OR_IP}:5202
     ports:
       - "5104:80"
+    volumes:
+      - type: bind
+        source: ./Web/WebSPA/wwwroot
+        target: /app/wwwroot
 
   webmvc:
     environment:
